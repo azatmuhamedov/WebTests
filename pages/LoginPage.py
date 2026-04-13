@@ -4,5 +4,5 @@ from selenium.webdriver.common.by import By
 class LoginPageLocators:
     pass
 
-class LoginPageHelper(BasePage)
+class LoginPageHelper(BasePage):
     pass
