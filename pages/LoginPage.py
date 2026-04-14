@@ -2,8 +2,8 @@ from pages.BasePage import BasePage
 from selenium.webdriver.common.by import By
 
 class LoginPageLocators:
-    LOGIN_TAB = (By.XPATH, '//*[@id="login-9688310608"]')
-    QRCODE_TAB = (By.XPATH, '//*[@id="qrCode-9688310661"]')
+    LOGIN_TAB = (By.XPATH, '//*[@data-l="t,login_tab"]')
+    QRCODE_TAB = (By.XPATH, '//*[@data-l="t,qr_tab"]')
     LOGIN_FIELD = (By.XPATH, '//*[@id="field_email"]')
     PASSWORD_FIELD = (By.ID, 'field_password')
     PASSWORD_HIDDEN = (By.XPATH, '//*[@class="vkuiVisuallyHidden__host vkuiRootComponent__host"]')
