@@ -17,6 +17,8 @@ class LoginPageLocators:
     MAIL_BUTTON = (By.XPATH, '//*[@class="i ic social-icon __s __mailru"]')
     YA_BUTTON = (By.XPATH, '//*[@class="i ic social-icon __s __yandex"]')
     ERROR_TEXT = (By.XPATH, "//span[contains(@class,'vkuiCaption__sizeYNone')]")
+    RESTORE_BUTTON = (By.XPATH, "//a[contains(@class,'vkuiButton__modePrimary')]")
+    GO_BACK_BUTTON = (By.XPATH, "//div[5]/button[contains(@class,'vkuiButton__modeSecondary')]")
 
 class LoginPageHelper(BasePage):
     def __init__(self, driver):
@@ -24,6 +26,8 @@ class LoginPageHelper(BasePage):
         self.check_page()
 
     def check_page(self):
+        with allure.step('Проверяем корректность загрузки страницы'):
+            self.attach_screenshot()
         self.find_element(LoginPageLocators.LOGIN_TAB)
         self.find_element(LoginPageLocators.QRCODE_TAB)
         self.find_element(LoginPageLocators.LOGIN_FIELD)
@@ -47,6 +51,18 @@ class LoginPageHelper(BasePage):
         return self.find_element(LoginPageLocators.ERROR_TEXT).text
 
     @allure.step('Заполняем поле логина')
-    def send_login(self):
+    def send_login(self, login):
+        self.find_element(LoginPageLocators.LOGIN_FIELD).send_keys(login)
         self.attach_screenshot()
-        self.find_element(LoginPageLocators.LOGIN_FIELD).send_keys("kek")
+
+
+    @allure.step('Заполняем поле пароля')
+    def send_password(self, password):
+        self.find_element(LoginPageLocators.PASSWORD_FIELD).send_keys(password)
+        self.attach_screenshot()
+
+    @allure.step('Переходим к восстановлению')
+    def click_recovery(self):
+        self.attach_screenshot()
+        self.find_element(LoginPageLocators.RESTORE_BUTTON).click()
+
