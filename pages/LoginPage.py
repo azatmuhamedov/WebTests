@@ -1,6 +1,6 @@
 import allure
 
-from pages.BasePage import BasePage
+from pages.BasePage import BasePageHelper
 from selenium.webdriver.common.by import By
 
 class LoginPageLocators:
@@ -20,7 +20,7 @@ class LoginPageLocators:
     RESTORE_BUTTON = (By.XPATH, "//a[contains(@class,'vkuiButton__modePrimary')]")
     GO_BACK_BUTTON = (By.XPATH, "//div[5]/button[contains(@class,'vkuiButton__modeSecondary')]")
 
-class LoginPageHelper(BasePage):
+class LoginPageHelper(BasePageHelper):
     def __init__(self, driver):
         self.driver = driver
         self.check_page()
