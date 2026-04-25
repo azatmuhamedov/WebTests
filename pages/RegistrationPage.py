@@ -9,7 +9,7 @@ class RegistrationPageLocators:
     SUBMIT_BUTTON = (By.XPATH, '//button[contains(@class,"vkuiButton__modePrimary")]')
     COUNTRY_ITEM = (By.XPATH, '//span[text()="+"]')
 
-class RegistrationPageHelperHelper(BasePageHelper):
+class RegistrationPageHelper(BasePageHelper):
     def __init__(self, driver):
         self.driver = driver
         self.check_page()

@@ -20,7 +20,7 @@ class HelpPageLocators:
     IMPORTANT_SERVICES = (By.XPATH, '//*[@name="illustrations/ill_useful_info"]')
     ADVERTISEMENT_CABINET = (By.XPATH, '//*[@name="illustrations/ill_advertising_cabinet"]')
 
-class  HelpPageHelperHelper(BasePageHelper):
+class  HelpPageHelper(BasePageHelper):
     def __init__(self, driver):
         self.driver = driver
         self.check_page()
